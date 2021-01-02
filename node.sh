@@ -7,15 +7,29 @@ echo -e "Let's starting setup!\n"
 #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #install nodebrew
-#brew install
-
-#nodebrew setup initalize
-#/usr/local/opt/nodebrew/bin/nodebrew setup_dirs
+#curl -L git.io/nodebrew | perl - setup
 
 #export path
-#echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bashrc
-#echo 'export NODEBREW_ROOT=/usr/local/var/nodebrew' >> ~/.bshrc
+#echo 'export PATH=/usr/local/var/nodebrew/current/bin:$PATH' >> ~/.bashrc
 
+#confirm nodebreww
+nodebrew -v
 
-#confirm node version
+#install node.js of stable
+nodebrew install-binaly stable
+
+#confirm nodebrew as node list and select using node
+nodebrew list
+
+#choose use node
+#nodebrew use v*.*.*
+
+#confirm node and npm version
 node -v
+npm -v
+
+#vue-cli
+npm install -g vue-cli
+vue init webpack my-project
+cd !$
+npm run dev
